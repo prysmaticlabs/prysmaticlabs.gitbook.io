@@ -22,7 +22,7 @@ Prysm can be installed either with Docker **\(recommended\)** or using our build
 #### **For Bazel installations:**
 
 * The latest release of [Bazel](https://docs.bazel.build/versions/master/install.html)
-* git
+* The latest release of `git`
 * A modern UNIX operating system \(MacOS included\)
 
 ## Installing Prysm
@@ -35,7 +35,7 @@ Prysm can be installed either with Docker **\(recommended\)** or using our build
 docker -v
 ```
 
-    2. To pull the Prysm images from the server, issue the following commands:
+    2. To pull the Prysm images, issue the following commands:
 
 ```text
 docker pull gcr.io/prysmaticlabs/prysm/validator:latest
@@ -59,7 +59,7 @@ git clone https://github.com/prysmaticlabs/prysm
 cd prysm
 ```
 
-    3. Build both the beacon chain node implementation and the validator client:
+    3. Build both the beacon chain node and the validator client:
 
 ```text
 bazel build //beacon-chain:beacon-chain
@@ -137,44 +137,15 @@ This will sync up the Beacon Node with the latest head block in the network. Not
 
 ## Staking ETH: Running a validator client
 
-Once your beacon node is up, the chain will be waiting for you to deposit 3.2 Goerli ETH into the Validator Deposit Contract to activate your validator \(discussed in the section below\). First though, you will need to create a validator client to connect to this node in order to stake and participate. 
+Once your beacon node is up, the chain will be waiting for you to deposit 3.2 Goerli ETH into the Validator Deposit Contract to activate your validator \(discussed in the section below\). First though, you will need to create a validator client to connect to this node in order to stake and participate.
 
 Each validator represents 3.2 Goerli ETH being staked in the system, and it is possible to spin up as many as you desire in order to have more stake in the network.
 
 ### Activating your validator: depositing 3.2 Goerli ETH
 
-To begin setting up a validator, follow the instructions for steps 1 and 2 found on [prylabs.net](https://prylabs.net) to optionally use the Goerli test ETH faucet and make a deposit. 
+To begin setting up a validator, follow the instructions for steps 1 and 2 found on [prylabs.net](https://prylabs.net) to optionally use the Goerli test ETH faucet and make a deposit.
 
-#### Generating a validator keypair **with Docker**
-
-To generate a public and private key for a validator, issue the command:
-
-```text
-docker run -it -v /tmp/prysm-data:/data gcr.io/prysmaticlabs/prysm/validator:latest accounts create --keystore-path=/data --password=changeme
-```
-
-This will print a **deposit data** string \(format: 0x123456789abcdef\). Copy and paste this data into step 3 on prylabs.net.
-
-#### Starting the validator with Docker
-
-1. Assuming your beacon node running and synced after following the [running a beacon node](./#connecting-to-the-testnet-running-a-beacon-node) section, issue the following command to start your validator:
-
-```text
-docker run -it -v /tmp/prysm-data:/data --network="host" gcr.io/prysmaticlabs/prysm/validator:latest --beacon-rpc-provider=127.0.0.1:4000 --keystore-path=/data --password=changeme 
-```
-
-    2. Finish submitting your deposit and deposit data on prylabs.net.
-
-#### Starting the validator with Bazel
-
-Open another terminal window. Enter your Prysm directory and run the validator by issuing the following command:
-
-```text
-cd prysm
-bazel run //validator
-```
-
-It will take a while for the nodes in the network to process a deposit. Once the node is active, the validator will immediately begin performing its responsibilities. 
+It will take a while for the nodes in the network to process a deposit. Once the node is active, the validator will immediately begin performing its responsibilities.
 
 In your validator client, you will be able to frequently see your validator balance as it goes up over time. Note that, should your node ever go offline for a long period, a validator will start gradually losing its deposit until it is removed from the network entirely.
 
