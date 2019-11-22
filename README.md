@@ -22,7 +22,7 @@ Prysm can be installed either with Docker **\(recommended\)** or using our build
 #### **For Bazel installations:**
 
 * The latest release of [Bazel](https://docs.bazel.build/versions/master/install.html)
-* git (installed 
+* git
 * A modern UNIX operating system \(MacOS included\)
 
 ## Installing Prysm
