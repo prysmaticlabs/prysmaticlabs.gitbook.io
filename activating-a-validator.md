@@ -6,11 +6,11 @@ description: >-
 
 # Activating a Validator
 
-### Downloading Prysm
+## Downloading Prysm
 
 To begin, follow the instructions found in the [installation section](./#installing-prysm) of the [Getting Started](./) guide to fetch and install Prysm with either Docker or Bazel.
 
-### Receiving Göerli ETH
+## Receiving Göerli ETH
 
 On step 2, you will be asked to link a wallet address to your validator with either the [Metamask](https://metamask.io/) browser extension \(recommended\) or [Portis](https://portis.io). Select your preferred platform and click through the steps presented.
 
@@ -18,13 +18,11 @@ On step 2, you will be asked to link a wallet address to your validator with eit
 
 The wallet is scanned for the required amount of Göerli ETH after being linked. If the wallet does not have sufficient funds, you will be given the option to receive the required GöETH from our faucet.
 
-### Generating a validator keypair
+## Generating a validator keypair
 
-Step 3 requires running a command to generate a public / private keypair for your validator, as well as deposit data to submit on the prylabs.net page. Depending on your platform, issue the appropriate command from the examples below..
+Step 3 requires running a command to generate a public / private keypair for your validator, as well as deposit data to submit on the prylabs.net page. Depending on your platform, issue the appropriate command from the examples below.
 
 #### Generating with Docker on GNU/Linux or macOS
-
-To generate a keypair via Docker on UNIX, issue the command:
 
 ```bash
 docker run -it -v /usr/local/prysm/validator:/data \
@@ -34,15 +32,11 @@ docker run -it -v /usr/local/prysm/validator:/data \
 
 #### Generating with Docker on Windows
 
-To generate a keypair via Docker on Windows, issue the command:
-
 ```text
 docker run -it -v /tmp/prysm-data:/data gcr.io/prysmaticlabs/prysm/validator:latest accounts create --keystore-path=/data --password=changeme
 ```
 
 #### Generating with Bazel
-
-To generate a keypair via Bazel, issue the command:
 
 ```text
 bazel run //validator -- accounts create --keystore-path=$HOME/beacon-chain --password=changeme
@@ -52,7 +46,7 @@ This command will output a `Raw Transaction Data` block:
 
 ![](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LRNnKRqTm4z1mzdDqDF%2F-LuJpxGKxOpat8TfDxPP%2F-Lua3OVmMOefnzXXvdGq%2F4.png?alt=media&token=96459a93-055c-4bf1-a0af-07a900d7b47f)
 
-### Submitting the deposit data
+## Submitting the deposit data
 
 **Method 1:** Copy and paste the deposit data into the field on prylabs.net:
 
@@ -60,7 +54,7 @@ This command will output a `Raw Transaction Data` block:
 
 **Method 2:** Users may also choose to submit the required 3.2 GöETH along with the data directly to the current deposit contract ****\(found [here](https://prylabs.net/contract)\). To enable the hex data field on the Send page in Metamask, click your wallets avatar &gt; Settings &gt; Advanced &gt; toggle 'Show hex data'.
 
-### Starting up the beacon node
+## Starting up the beacon node
 
 {% hint style="info" %}
 If you have already started and syncronised your beacon node by following the [Getting Started](./#connecting-to-the-testnet-running-a-beacon-node) guide section on the topic, this portion can be skipped.
@@ -96,7 +90,7 @@ The beacon node will spin up and immediately begin communicating with the Prysm 
 
 The process of syncronising may take a while; the incoming block per second capacity is dependent upon the connection strength, network congestion and overall peer count. 
 
-### Starting up the validator client
+## Starting up the validator client
 
 {% hint style="danger" %}
 The beacon node must be **completely synced** before attempting to initialise a validator client, otherwise the validator will not be able to complete the deposit and **funds will lost**.
@@ -126,7 +120,7 @@ docker run -it -v /tmp/prysm-data:/data --network="host" gcr.io/prysmaticlabs/pr
 bazel run //validator -- --keystore-path=$HOME/beacon-chain --password=changeme
 ```
 
-### Submitting a deposit contract
+## Submitting the deposit contract
 
 Once both the beacon node and validator client are successfully running, make your deposit by clicking the button and following the steps presented in your wallet.
 
