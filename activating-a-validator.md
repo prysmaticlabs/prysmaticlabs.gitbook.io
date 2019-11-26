@@ -52,9 +52,13 @@ This command will output a `Raw Transaction Data` block:
 
 ![](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LRNnKRqTm4z1mzdDqDF%2F-LuJpxGKxOpat8TfDxPP%2F-Lua3OVmMOefnzXXvdGq%2F4.png?alt=media&token=96459a93-055c-4bf1-a0af-07a900d7b47f)
 
-Copy and paste the deposit data into the input field on prylabs.net:
+### Submitting the deposit data
+
+**Method 1:** Copy and paste the deposit data into the field on prylabs.net:
 
 ![](.gitbook/assets/77.png)
+
+**Method 2:** Users may also choose to submit the required 3.2 GöETH along with the data directly to the current deposit contract ****\(found [here](https://prylabs.net/contract)\). To enable the hex data field on the Send page in Metamask, click your wallets avatar &gt; Settings &gt; Advanced &gt; toggle 'Show hex data'.
 
 ### Starting up the beacon node
 
@@ -134,5 +138,5 @@ The validator is now awaiting its first assignment from the network. This should
 
 **Congratulations, you are now fully participating in the Prysm testnet!** ♡
 
-_Still have questions?_ Stop by our [Discord](https://discord.gg/KSA7rPr) for assistance!
+**Still have questions?**  __Stop by our [Discord](https://discord.gg/KSA7rPr) for assistance!
 

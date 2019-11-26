@@ -1,8 +1,8 @@
 ---
 description: >-
-  This guide outlines the process of installing and initialising the Prysm
-  testnet as well as depositing the initial Göerli ETH required to fully
-  participate as a validator in the network.
+  This guide outlines the process of installing the Prysm testnet as well as
+  depositing the Göerli ETH required to fully participate as a validator in the
+  network.
 ---
 
 # Getting Started with Prysm
@@ -141,13 +141,13 @@ The beacon node must be **completely synced** before attempting to initialise a 
 
 ## Staking ETH: Running a validator client
 
-Once your beacon node is up, the chain will be waiting for you to deposit 3.2 Goerli ETH into the Validator Deposit Contract to activate your validator \(discussed in the section below\). First though, you will need to create a validator client and connect to this node to participate in consensus.
+Once your beacon node is up, the chain will be waiting for you to deposit 3.2 Goerli ETH into a [validator deposit contract](how-prysm-works/validator-deposit-contract.md) in order to activate your validator \(discussed in the section below\). First though, you will need to create this validator and connect to this node to participate in consensus.
 
 Each validator represents 3.2 Goerli ETH being staked in the system, and it is possible to spin up as many as you desire in order to have more stake in the network.
 
 ### Activating your validator: depositing 3.2 Göerli ETH
 
-To begin setting up a validator, follow the instructions for steps 1 and 2 found on [prylabs.net](https://prylabs.net) to use the Göerli ETH faucet and make a deposit.
+To begin setting up a validator, follow the instructions found on [prylabs.net](https://prylabs.net) to use the Göerli ETH faucet and make a deposit. For step-by-step assistance with this deposit page, see the [Activating a Validator ](activating-a-validator.md)section of the documentation.
 
 It will take a while for the nodes in the network to process a deposit. Once the node is active, the validator will immediately begin performing its responsibilities.
 
