@@ -1,7 +1,7 @@
 ---
 description: >-
   This guide outlines the process of installing and initialising the Prysm
-  testnet as well as depositing the initial Goerli ETH required to fully
+  testnet as well as depositing the initial Göerli ETH required to fully
   participate as a validator in the network.
 ---
 
@@ -70,7 +70,7 @@ Bazel will automatically pull and install any dependencies as well, including Go
 
 ## Connecting to the testnet: running a beacon node
 
-This section contains instructions for initialising a beacon node and connecting to the public testnet. To further understand the role that both the beacon node and validator play in Prysm, see [this section of our documentation](https://prysmaticlabs.gitbook.io/prysm/how-prysm-works/overview-technical)
+This section contains instructions for initialising a beacon node and connecting to the public testnet. To further understand the role that both the beacon node plays in Prysm, see [this section.](https://prysmaticlabs.gitbook.io/prysm/how-prysm-works/overview-technical)
 
 ### Running via Docker
 
@@ -133,17 +133,21 @@ To start your Beacon Node with Bazel, issue the following command:
 bazel run //beacon-chain -- --clear-db --datadir=/tmp/prysm-data
 ```
 
-This will sync up the Beacon Node with the latest head block in the network. Note that the beacon node must be **completely synced** before attempting to initialise a validator client, otherwise the validator will not be able to complete the deposit and funds will be lost.
+This will sync up the beacon node with the latest head block in the network. 
+
+{% hint style="warning" %}
+The beacon node must be **completely synced** before attempting to initialise a validator client, otherwise the validator will not be able to complete the deposit and **funds will lost**.
+{% endhint %}
 
 ## Staking ETH: Running a validator client
 
-Once your beacon node is up, the chain will be waiting for you to deposit 3.2 Goerli ETH into the Validator Deposit Contract to activate your validator \(discussed in the section below\). First though, you will need to create a validator client to connect to this node in order to stake and participate.
+Once your beacon node is up, the chain will be waiting for you to deposit 3.2 Goerli ETH into the Validator Deposit Contract to activate your validator \(discussed in the section below\). First though, you will need to create a validator client and connect to this node to participate in consensus.
 
 Each validator represents 3.2 Goerli ETH being staked in the system, and it is possible to spin up as many as you desire in order to have more stake in the network.
 
-### Activating your validator: depositing 3.2 Goerli ETH
+### Activating your validator: depositing 3.2 Göerli ETH
 
-To begin setting up a validator, follow the instructions for steps 1 and 2 found on [prylabs.net](https://prylabs.net) to optionally use the Goerli test ETH faucet and make a deposit.
+To begin setting up a validator, follow the instructions for steps 1 and 2 found on [prylabs.net](https://prylabs.net) to use the Göerli ETH faucet and make a deposit.
 
 It will take a while for the nodes in the network to process a deposit. Once the node is active, the validator will immediately begin performing its responsibilities.
 
@@ -153,7 +157,7 @@ In your validator client, you will be able to frequently see your validator bala
 
 ## Setting up a local ETH2 development chain
 
-This section outlines the process of setting up Prysm for local interop testing with other Ethereum 2.0 client implementations. See the [INTEROP.md](https://github.com/prysmaticlabs/prysm/blob/master/INTEROP.md) file for advanced configuration options. For more background information on interoperability development, see [this blog post](https://blog.ethereum.org/2019/09/19/eth2-interop-in-review/).
+This section outlines the process of setting up Prysm for local testing with other Ethereum 2.0 client implementations. See the [INTEROP.md](https://github.com/prysmaticlabs/prysm/blob/master/INTEROP.md) file for advanced configuration options. For more background information on interoperability development, see [this blog post](https://blog.ethereum.org/2019/09/19/eth2-interop-in-review/).
 
 ### Installation and dependencies
 
@@ -161,7 +165,7 @@ To begin setting up a local ETH2 development chain, follow the **Bazel** instruc
 
 ### Running a local beacon node and validator client
 
-The example below will deterministically generate a beacon genesis state, initiate Prysm with 64 validators and set the genesis time to your local machines current UNIX time.
+The example below will generate a beacon genesis state and initiate Prysm with 64 validators with the genesis time set to your machines UNIX time.
 
 1. Open up two terminal windows. In the first, issue the command:
 

@@ -4,7 +4,7 @@ description: >-
   release.
 ---
 
-# About the Public Testnet
+# On the Public Testnet
 
 ## Features of this release
 

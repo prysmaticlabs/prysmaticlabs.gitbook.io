@@ -1,12 +1,13 @@
 # Table of contents
 
 * [Getting Started with Prysm](README.md)
+* [Activating a Validator](activating-a-validator.md)
 
 ## Introduction
 
 * [What is Prysm?](introduction/what-is-prysm.md)
 * [On Ethereum 2.0](introduction/ethereum-2.0.md)
-* [About the Public Testnet](introduction/about-our-public-testnet.md)
+* [On the Public Testnet](introduction/about-our-public-testnet.md)
 
 ## How Prysm Works
 
