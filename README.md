@@ -79,9 +79,10 @@ This section contains instructions for initialising a beacon node and connecting
 To start your beacon node, issue the following command:
 
 ```text
-docker run -v $HOME/prysm-data:/data -p 4000:4000 --name beacon-node \
+docker run -it -v /usr/local/prysm/beacon:/data -p 4000:4000 \
   gcr.io/prysmaticlabs/prysm/beacon-chain:latest \
-  --datadir=/data
+  --datadir=/data \
+  --init-sync-no-verify
 ```
 
 The beacon node can be halted by either using `Ctrl+c` or with the command:
@@ -105,7 +106,7 @@ docker rm beacon-node
 To recreate a deleted container and refresh the chain database, issue the start command with an additional `--clear-db` parameter:
 
 ```text
-docker run -it -v $HOME/prysm-data:/data -p 4000:4000 --name beacon-node \
+docker run -it -v $HOME/prysm:/data -p 4000:4000 --name beacon-node \
   gcr.io/prysmaticlabs/prysm/beacon-chain:latest \
   --datadir=/data \
   --clear-db
@@ -118,11 +119,11 @@ docker run -it -v $HOME/prysm-data:/data -p 4000:4000 --name beacon-node \
    2. Click 'Shared Drives'
    3. Select a drive to share
    4. Click 'Apply'
-2. You will next need to create a directory named `/tmp/prysm-data/` within your selected shared Drive. This folder will be used as a local data directory for Beacon Node chain data as well as account and keystore information required by the validator. Docker will **not** create this directory if it does not exist already. For the purposes of these instructions, it is assumed that `C:` is your prior-selected shared Drive.
+2. You will next need to create a directory named `/prysm/` within your selected shared Drive. This folder will be used as a local data directory for Beacon Node chain data as well as account and keystore information required by the validator. Docker will **not** create this directory if it does not exist already. For the purposes of these instructions, it is assumed that `C:` is your prior-selected shared Drive.
 3. To run the beacon node, issue the following command:
 
 ```text
-docker run -it -v c:/tmp/prysm-data:/data -p 4000:4000 gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data --clear-db
+docker run -it -v /usr/local/prysm/beacon:/data -p 4000:4000 gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data --init-sync-no-verify --clear-db
 ```
 
 ### Running via Bazel
@@ -130,7 +131,7 @@ docker run -it -v c:/tmp/prysm-data:/data -p 4000:4000 gcr.io/prysmaticlabs/prys
 To start your Beacon Node with Bazel, issue the following command:
 
 ```text
-bazel run //beacon-chain -- --clear-db --datadir=/tmp/prysm-data
+bazel run //beacon-chain -- --clear-db --datadir=/
 ```
 
 This will sync up the beacon node with the latest head block in the network. 

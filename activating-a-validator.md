@@ -25,7 +25,7 @@ Step 3 requires running a command to generate a public / private keypair for you
 #### Generating with Docker on GNU/Linux or macOS
 
 ```bash
-docker run -it -v /usr/local/prysm/validator:/data \
+docker run -it -v $HOME/prysm/validator:/data \
    gcr.io/prysmaticlabs/prysm/validator:latest \
    accounts create --keystore-path=/data --password=changeme
 ```
@@ -33,7 +33,7 @@ docker run -it -v /usr/local/prysm/validator:/data \
 #### Generating with Docker on Windows
 
 ```text
-docker run -it -v /tmp/prysm-data:/data gcr.io/prysmaticlabs/prysm/validator:latest accounts create --keystore-path=/data --password=changeme
+docker run -it -v $HOME/prysm:/data gcr.io/prysmaticlabs/prysm/validator:latest accounts create --keystore-path=/data --password=changeme
 ```
 
 #### Generating with Bazel
@@ -65,17 +65,16 @@ Open a terminal window. Depending on your platform, issue the appropriate comman
 #### Starting the beacon node with Docker on GNU/Linux or macOS
 
 ```text
-docker run -it -v /usr/local/prysm/validator:/data --network="host" \
-  gcr.io/prysmaticlabs/prysm/validator:latest \
-  --beacon-rpc-provider=127.0.0.1:4000 \
-  --keystore-path=/data \
-  --password=changeme
+docker run -it -v $HOME/prysm/beacon:/data -p 4000:4000 \
+  gcr.io/prysmaticlabs/prysm/beacon-chain:latest \
+  --datadir=/data \
+  --init-sync-no-verify
 ```
 
 #### Starting the beacon node with Docker on WIndows
 
 ```text
-docker run -it -v /tmp/prysm-data:/data gcr.io/prysmaticlabs/prysm/validator:latest accounts create --keystore-path=/data --password=changeme
+docker run -it -v $HOME/prysm/beacon:/data -p 4000:4000 gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data --init-sync-no-verify
 ```
 
 #### Starting the beacon node with Bazel
@@ -101,7 +100,7 @@ Open a second terminal window. Depending on your platform, issue the appropriate
 #### Starting the validator client with Docker on GNU/Linux or macOS
 
 ```text
-docker run -it -v /usr/local/prysm/validator:/data --network="host" \
+docker run -it -v $HOME/prysm/validator:/data --network="host" \
   gcr.io/prysmaticlabs/prysm/validator:latest \
   --beacon-rpc-provider=127.0.0.1:4000 \
   --keystore-path=/data \
@@ -111,7 +110,7 @@ docker run -it -v /usr/local/prysm/validator:/data --network="host" \
 #### Starting the validator client with Docker on Windows
 
 ```text
-docker run -it -v /tmp/prysm-data:/data --network="host" gcr.io/prysmaticlabs/prysm/validator:latest --beacon-rpc-provider=127.0.0.1:4000 --keystore-path=/data --password=changeme
+docker run -it -v $HOME/prysm/validator:/data --network="host" gcr.io/prysmaticlabs/prysm/validator:latest --beacon-rpc-provider=127.0.0.1:4000 --keystore-path=/data --password=changeme
 ```
 
 #### Starting the validator client with Bazel
