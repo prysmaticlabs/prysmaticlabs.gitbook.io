@@ -35,7 +35,7 @@ Prysm can be installed either with Docker **\(recommended\)** or using our build
 docker -v
 ```
 
-    2. To pull the Prysm images, issue the following commands:
+1. To pull the Prysm images, issue the following commands:
 
 ```text
 docker pull gcr.io/prysmaticlabs/prysm/validator:latest
@@ -52,14 +52,14 @@ This process will also install any related dependencies.
 bazel version
 ```
 
-    2. Clone Prysm's [main repository](https://github.com/prysmaticlabs/prysm) and enter the directory:
+1. Clone Prysm's [main repository](https://github.com/prysmaticlabs/prysm) and enter the directory:
 
 ```text
 git clone https://github.com/prysmaticlabs/prysm
 cd prysm
 ```
 
-    3. Build both the beacon chain node and the validator client:
+1. Build both the beacon chain node and the validator client:
 
 ```text
 bazel build //beacon-chain:beacon-chain
@@ -70,7 +70,11 @@ Bazel will automatically pull and install any dependencies as well, including Go
 
 ## Connecting to the testnet: running a beacon node
 
-This section contains instructions for initialising a beacon node and connecting to the public testnet. To further understand the role that both the beacon node plays in Prysm, see [this section.](https://prysmaticlabs.gitbook.io/prysm/how-prysm-works/overview-technical)
+Below are instructions for initialising a beacon node and connecting to the public testnet. To further understand the role that the beacon node plays in Prysm, see [this section of the documentation.](https://prysmaticlabs.gitbook.io/prysm/how-prysm-works/overview-technical)
+
+{% hint style="info" %}
+It's recommended to open up port 13000 on your local router to improve connectivity and receive more peers from the network. To do so, navigate to `192.168.0.1` in your browser and login if required. Follow along with the interface to modify your routers firewall settings. When this task is completed, append the parameter`--p2p-host-ip=$(curl -s ident.me)` to your selected beacon startup command presented in this section to utilise the newly opened port.
+{% endhint %}
 
 ### Running via Docker
 
@@ -134,7 +138,7 @@ To start your Beacon Node with Bazel, issue the following command:
 bazel run //beacon-chain -- --clear-db --datadir=$HOME/prysm
 ```
 
-This will sync up the beacon node with the latest head block in the network. 
+This will sync up the beacon node with the latest head block in the network.
 
 {% hint style="warning" %}
 The beacon node must be **completely synced** before attempting to initialise a validator client, otherwise the validator will not be able to complete the deposit and **funds will lost**.
@@ -180,7 +184,7 @@ bazel run //beacon-chain -- \
 --interop-eth1data-votes
 ```
 
-    2. Wait a moment for the beacon chain to start. In the other terminal, issue the command:
+1. Wait a moment for the beacon chain to start. In the other terminal, issue the command:
 
 ```text
 bazel run //validator -- --interop-num-validators 64
