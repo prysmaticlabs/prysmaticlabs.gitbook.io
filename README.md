@@ -29,13 +29,13 @@ Prysm can be installed either with Docker **\(recommended\)** or using our build
 
 ### Build via Docker
 
-1. Ensure you are running the most recent version of Docker by issuing the command:
+Ensure you are running the most recent version of Docker by issuing the command:
 
 ```text
 docker -v
 ```
 
-1. To pull the Prysm images, issue the following commands:
+To pull the Prysm images, issue the following commands:
 
 ```text
 docker pull gcr.io/prysmaticlabs/prysm/validator:latest
@@ -46,20 +46,20 @@ This process will also install any related dependencies.
 
 ### Build via Bazel
 
-1. Open a terminal window. Ensure you are running the most recent version of Bazel by issuing the command:
+Open a terminal window. Ensure you are running the most recent version of Bazel by issuing the command:
 
 ```text
 bazel version
 ```
 
-1. Clone Prysm's [main repository](https://github.com/prysmaticlabs/prysm) and enter the directory:
+Clone Prysm's [main repository](https://github.com/prysmaticlabs/prysm) and enter the directory:
 
 ```text
 git clone https://github.com/prysmaticlabs/prysm
 cd prysm
 ```
 
-1. Build both the beacon chain node and the validator client:
+Build both the beacon chain node and the validator client:
 
 ```text
 bazel build //beacon-chain:beacon-chain
@@ -73,7 +73,7 @@ Bazel will automatically pull and install any dependencies as well, including Go
 Below are instructions for initialising a beacon node and connecting to the public testnet. To further understand the role that the beacon node plays in Prysm, see [this section of the documentation.](https://prysmaticlabs.gitbook.io/prysm/how-prysm-works/overview-technical)
 
 {% hint style="info" %}
-It's recommended to open up port 13000 on your local router to improve connectivity and receive more peers from the network. To do so, navigate to `192.168.0.1` in your browser and login if required. Follow along with the interface to modify your routers firewall settings. When this task is completed, append the parameter`--p2p-host-ip=$(curl -s ident.me)` to your selected beacon startup command presented in this section to utilise the newly opened port.
+It is recommended to open up port 13000 on your local router to improve connectivity and receive more peers from the network. To do so, navigate to `192.168.0.1` in your browser and login if required. Follow along with the interface to modify your routers firewall settings. When this task is completed, append the parameter`--p2p-host-ip=$(curl -s ident.me)` to your selected beacon startup command presented in this section to use the newly opened port.
 {% endhint %}
 
 ### Running via Docker
@@ -172,7 +172,7 @@ To begin setting up a local ETH2 development chain, follow the **Bazel** instruc
 
 The example below will generate a beacon genesis state and initiate Prysm with 64 validators with the genesis time set to your machines UNIX time.
 
-1. Open up two terminal windows. In the first, issue the command:
+Open up two terminal windows. In the first, issue the command:
 
 ```text
 bazel run //beacon-chain -- \
@@ -184,7 +184,7 @@ bazel run //beacon-chain -- \
 --interop-eth1data-votes
 ```
 
-1. Wait a moment for the beacon chain to start. In the other terminal, issue the command:
+Wait a moment for the beacon chain to start. In the other terminal, issue the command:
 
 ```text
 bazel run //validator -- --interop-num-validators 64
