@@ -15,7 +15,7 @@
 * [Prysm Beacon Node](how-prysm-works/the-beacon-chain.md)
 * [Prysm Validator Client](how-prysm-works/validator-clients.md)
 * [Validator Deposit Contract](how-prysm-works/validator-deposit-contract.md)
-* [Ethereum 2.0 Public API](how-prysm-works/ethereum-2.0-public-api-1.md)
+* [Ethereum 2.0 Public API](how-prysm-works/ethereum-2.0-public-api.md)
 * [Simple Serialize \(SSZ\)](how-prysm-works/ethereum-2.0-serialization-simple-serialize-ssz.md)
 * [BoltDB Database](how-prysm-works/database-backend-boltdb.md)
 * [P2P Networking](how-prysm-works/p2p-networking.md)

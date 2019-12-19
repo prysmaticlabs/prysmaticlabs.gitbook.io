@@ -43,7 +43,7 @@ A block proposal must include several items to meet the minimum requirements for
 7. Fetch any pending attestations from the beacon node.
 8. Construct the block object by packaging the above items into a block data structure. 
 9. Compute the state root hash, sign the block with the [validator](../glossaries/terminology.md#validator)'s private key. 
-10. Propose the block by sending it to the beacon node via [gRPC](ethereum-2.0-public-api-1.md).
+10. Propose the block by sending it to the beacon node via [gRPC](ethereum-2.0-public-api.md).
 
 ### Attesting to a Beacon Block
 
@@ -53,5 +53,5 @@ Attesting to a block is a similar process to proposing, albeit with a few slight
 2. A request is made to the beacon node for the information required to attest a block. 
 3. An attestation bitfield is constructed using the validator index.
 4. The attestation key is then signed with a validator's secret key. 
-5. Halfway through the slot duration, the attestation is sent to the beacon node via [gRPC](ethereum-2.0-public-api-1.md).
+5. Halfway through the slot duration, the attestation is sent to the beacon node via [gRPC](ethereum-2.0-public-api.md).
 
