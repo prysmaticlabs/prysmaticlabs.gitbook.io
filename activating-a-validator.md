@@ -67,27 +67,26 @@ Open a terminal window. Depending on your platform, issue the appropriate comman
 ```text
 docker run -it -v $HOME/prysm/beacon:/data -p 4000:4000 \
   gcr.io/prysmaticlabs/prysm/beacon-chain:latest \
-  --datadir=/data \
-  --init-sync-no-verify
+  --datadir=/data
 ```
 
 #### Starting the beacon node with Docker on WIndows
 
 ```text
-docker run -it -v $HOME/prysm/beacon:/data -p 4000:4000 gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data --init-sync-no-verify
+docker run -it -v $HOME/prysm/beacon:/data -p 4000:4000 gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data
 ```
 
 #### Starting the beacon node with Bazel
 
 ```text
-bazel run //beacon-chain -- --datadir=$HOME/beacon-chain --init-sync-no-verify
+bazel run //beacon-chain -- --datadir=$HOME/beacon-chain
 ```
 
 The beacon node will spin up and immediately begin communicating with the Prysm testnet, outputting data similar to the image below.
 
 ![](.gitbook/assets/9.png)
 
-The process of syncronising may take a while; the incoming block per second capacity is dependent upon the connection strength, network congestion and overall peer count. 
+The process of syncronising may take a while; the incoming block per second capacity is dependent upon the connection strength, network congestion and overall peer count.
 
 ## Starting up the validator client
 
