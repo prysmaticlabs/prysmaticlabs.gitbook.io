@@ -73,7 +73,7 @@ docker run -it -v $HOME/prysm/beacon:/data -p 4000:4000 \
 #### Starting the beacon node with Docker on WIndows
 
 ```text
-docker run -it -v $HOME/prysm/beacon:/data -p 4000:4000 gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data
+docker run -it -v $HOME/prysm/beacon:/data -p 4000:4000 gcr.io/prysmaticlabs/prysm/beacon-chain:testFix --datadir=/data
 ```
 
 #### Starting the beacon node with Bazel
