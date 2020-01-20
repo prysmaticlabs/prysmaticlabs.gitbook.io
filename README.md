@@ -7,9 +7,11 @@ description: >-
 
 # Getting Started with Prysm
 
+## This documentation portal is depreciated and no longer maintained. Please visit [docs.prylabs.network](https://docs.prylabs.network) for the most recent iteration.
+
 #### **Need assistance?**
 
-If you have questions about this documentation, feel free to stop by either the [Prysmatic Discord](https://discord.gg/KSA7rPr)'s **\#docs** channel or [our Gitter](https://gitter.im/prysmaticlabs/geth-sharding?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) and a member of the team or our community will be happy to assist you.
+If you have questions about this documentation, feel free to stop by either the [Prysmatic Discord](https://discord.gg/KSA7rPr)'s **\#documentation** channel or [our Gitter](https://gitter.im/prysmaticlabs/geth-sharding?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) and a member of the team or the community will be happy to assist you.
 
 ## Dependencies
 
@@ -81,7 +83,7 @@ It is recommended to open up port 13000 on your local router to improve connecti
 
 #### **Docker on Linux/Mac:**
 
-To start your beacon node, issue the following command (it is recommended to also include the --p2p-host-ip and --min-peers (set to 7) flags to improve peering):
+To start your beacon node, issue the following command \(it is recommended to also include the --p2p-host-ip and --min-peers \(set to 7\) flags to improve peering\):
 
 ```text
 docker run -it -v $HOME/prysm:/data -p 4000:4000 -p 13000:13000 --name beacon-node \
@@ -124,7 +126,7 @@ docker run -it -v $HOME/prysm:/data -p 4000:4000 -p 13000:13000 --name beacon-no
    3. Select a drive to share
    4. Click 'Apply'
 2. You will next need to create a directory named `/prysm/` within your selected shared Drive. This folder will be used as a local data directory for Beacon Node chain data as well as account and keystore information required by the validator. Docker will **not** create this directory if it does not exist already. For the purposes of these instructions, it is assumed that `C:` is your prior-selected shared Drive.
-3. To run the beacon node, issue the following command (it is recommended to also include the --p2p-host-ip and --min-peers (set to 7) flags to improve peering):
+3. To run the beacon node, issue the following command \(it is recommended to also include the --p2p-host-ip and --min-peers \(set to 7\) flags to improve peering\):
 
 ```text
 docker run -it -v c:/prysm/:/data -p 4000:4000 -p 13000:13000 gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/dat --clear-db
