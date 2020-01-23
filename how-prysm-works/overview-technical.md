@@ -6,6 +6,8 @@ description: >-
 
 # Architecture Overview
 
+## This documentation portal is depreciated and no longer maintained. Please visit [docs.prylabs.network](https://docs.prylabs.network) for the most recent iteration.
+
 ## Prysm client components
 
 When a Prysm client is initialised out of the box, it starts a variety of services that run in parallel to handle everything required for the lifecycle of the beacon chain. In no particular order, Prysm includes:

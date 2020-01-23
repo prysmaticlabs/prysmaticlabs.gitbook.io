@@ -6,6 +6,8 @@ description: >-
 
 # On the Public Testnet
 
+## This documentation portal is depreciated and no longer maintained. Please visit [docs.prylabs.network](https://docs.prylabs.network) for the most recent iteration.
+
 ## Features of this release
 
 * **The testnet is publicly accessible and NOT a simulation.** We provide a cloud cluster of nodes that participate in consensus, but anyone can join the network and contribute.

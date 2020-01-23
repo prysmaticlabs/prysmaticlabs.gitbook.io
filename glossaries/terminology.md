@@ -6,6 +6,8 @@ description: >-
 
 # Terminology
 
+## This documentation portal is depreciated and no longer maintained. Please visit [docs.prylabs.network](https://docs.prylabs.network) for the most recent iteration.
+
 ## General terms
 
 #### Proof-of-Stake \(PoS\)

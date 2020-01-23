@@ -6,6 +6,8 @@ description: >-
 
 # Simple Serialize \(SSZ\)
 
+## This documentation portal is depreciated and no longer maintained. Please visit [docs.prylabs.network](https://docs.prylabs.network) for the most recent iteration.
+
 Simple Serialize \(also known as SSZ\) is the serialization algorithm standard for all data structures common across Ethereum 2.0 client implementations. It is outlined in the official [Ethereum 2.0 specification](https://github.com/ethereum/eth2.0-specs/blob/dev/specs/simple-serialize.md). 
 
 Simple Serialize contains support for `bool`, `uint8`, `uint16`, `uint32`, `uint64`, `slice`, `array`, `struct` and `pointer` data types.

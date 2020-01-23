@@ -6,6 +6,8 @@ description: >-
 
 # Activating a Validator
 
+## This documentation portal is depreciated and no longer maintained. Please visit [docs.prylabs.network](https://docs.prylabs.network) for the most recent iteration.
+
 ## Downloading Prysm
 
 To begin, follow the instructions found in the [installation section](./#installing-prysm) of the [Getting Started](./) guide to fetch and install Prysm with either Docker or Bazel.
@@ -22,7 +24,7 @@ The wallet is scanned for the required amount of Göerli ETH after being linked.
 
 Step 3 requires running a command to generate a public / private keypair for your validator, as well as deposit data to submit on the prylabs.net page. Depending on your platform, issue the appropriate command from the examples below.
 
-#### Generating with Docker on GNU/Linux or macOS
+### Generating with Docker on GNU/Linux or macOS
 
 ```bash
 docker run -it -v $HOME/prysm/validator:/data \
@@ -30,13 +32,13 @@ docker run -it -v $HOME/prysm/validator:/data \
    accounts create --keystore-path=/data --password=changeme
 ```
 
-#### Generating with Docker on Windows
+### Generating with Docker on Windows
 
 ```text
 docker run -it -v $HOME/prysm:/data gcr.io/prysmaticlabs/prysm/validator:latest accounts create --keystore-path=/data --password=changeme
 ```
 
-#### Generating with Bazel
+### Generating with Bazel
 
 ```text
 bazel run //validator -- accounts create --keystore-path=$HOME/beacon-chain --password=changeme
@@ -52,7 +54,7 @@ This command will output a `Raw Transaction Data` block:
 
 ![](.gitbook/assets/77.png)
 
-**Method 2:** Users may also choose to submit the required 3.2 GöETH along with the data directly to the current deposit contract ****\(found [here](https://prylabs.net/contract)\). To enable the hex data field on the Send page in Metamask, click your wallets avatar &gt; Settings &gt; Advanced &gt; toggle 'Show hex data'.
+**Method 2:** Users may also choose to submit the required 3.2 GöETH along with the data directly to the current deposit contract _\*\*_\(found [here](https://prylabs.net/contract)\). To enable the hex data field on the Send page in Metamask, click your wallets avatar &gt; Settings &gt; Advanced &gt; toggle 'Show hex data'.
 
 ## Starting up the beacon node
 
@@ -62,7 +64,7 @@ If you have already started and syncronised your beacon node by following the [G
 
 Open a terminal window. Depending on your platform, issue the appropriate command from the examples below to start the beacon node.
 
-#### Starting the beacon node with Docker on GNU/Linux or macOS
+### Starting the beacon node with Docker on GNU/Linux or macOS
 
 ```text
 docker run -it -v $HOME/prysm/beacon:/data -p 4000:4000 \
@@ -70,13 +72,13 @@ docker run -it -v $HOME/prysm/beacon:/data -p 4000:4000 \
   --datadir=/data
 ```
 
-#### Starting the beacon node with Docker on WIndows
+### Starting the beacon node with Docker on WIndows
 
 ```text
 docker run -it -v $HOME/prysm/beacon:/data -p 4000:4000 gcr.io/prysmaticlabs/prysm/beacon-chain:latest --datadir=/data
 ```
 
-#### Starting the beacon node with Bazel
+### Starting the beacon node with Bazel
 
 ```text
 bazel run //beacon-chain -- --datadir=$HOME/beacon-chain
@@ -96,7 +98,7 @@ The beacon node must be **completely synced** before attempting to initialise a 
 
 Open a second terminal window. Depending on your platform, issue the appropriate command from the examples below to start the validator.
 
-#### Starting the validator client with Docker on GNU/Linux or macOS
+### Starting the validator client with Docker on GNU/Linux or macOS
 
 ```text
 docker run -it -v $HOME/prysm/validator:/data --network="host" \
@@ -106,13 +108,13 @@ docker run -it -v $HOME/prysm/validator:/data --network="host" \
   --password=changeme
 ```
 
-#### Starting the validator client with Docker on Windows
+### Starting the validator client with Docker on Windows
 
 ```text
 docker run -it -v $HOME/prysm/validator:/data --network="host" gcr.io/prysmaticlabs/prysm/validator:latest --beacon-rpc-provider=127.0.0.1:4000 --keystore-path=/data --password=changeme
 ```
 
-#### Starting the validator client with Bazel
+### Starting the validator client with Bazel
 
 ```text
 bazel run //validator -- --keystore-path=$HOME/beacon-chain --password=changeme
@@ -130,5 +132,5 @@ The validator is now awaiting its first assignment from the network. This should
 
 **Congratulations, you are now fully participating in the Prysm testnet!** ♡
 
-**Still have questions?**  __Stop by our [Discord](https://discord.gg/KSA7rPr) for assistance!
+**Still have questions?** \_\_Stop by our [Discord](https://discord.gg/KSA7rPr) for assistance!
 

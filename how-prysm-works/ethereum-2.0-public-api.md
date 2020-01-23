@@ -6,9 +6,11 @@ description: >-
 
 # Ethereum 2.0 Public API
 
+## This documentation portal is depreciated and no longer maintained. Please visit [docs.prylabs.network](https://docs.prylabs.network) for the most recent iteration.
+
 One of the required components for staking on the Ethereum 2.0 network is the [gRPC](https://grpc.io) server. It is utilised by the client to query the network for a variety of different public data, from the [canonical head block](../glossaries/terminology.md#canonical-head-block) to versioning and assignments.
 
-Interacting with the API requires the use of protocol buffers, also known as protobuf. These [protocol buffer](https://developers.google.com/protocol-buffers/) service definitions support both [gRPC](https://grpc.io/) as well as JSON over HTTP.  For information on the functionality of gRPC and protocol buffers more generally, see the [gRPC guide](https://grpc.io/docs/guides/).
+Interacting with the API requires the use of protocol buffers, also known as protobuf. These [protocol buffer](https://developers.google.com/protocol-buffers/) service definitions support both [gRPC](https://grpc.io/) as well as JSON over HTTP. For information on the functionality of gRPC and protocol buffers more generally, see the [gRPC guide](https://grpc.io/docs/guides/).
 
 ## Service definitions
 
