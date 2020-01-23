@@ -33,7 +33,7 @@ docker run -it -v $HOME/prysm/validator:/data \
 #### Generating with Docker on Windows
 
 ```text
-docker run -it -v $HOME/prysm:/data gcr.io/prysmaticlabs/prysm/validator:latest accounts create --keystore-path=/data --password=changeme
+docker run -it -v c:/prysm:/data gcr.io/prysmaticlabs/prysm/validator:latest accounts create --keystore-path=/data --password=changeme
 ```
 
 #### Generating with Bazel
